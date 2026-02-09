@@ -1,0 +1,181 @@
+/* =========================================
+   RHETORICAL DESIGN SYSTEM
+   Theme: The Attentive Interpreter
+   Vibe: Minimalist, Organic vs. Digital
+   ========================================= */
+
+:root {
+    /* THE PALETTE */
+    --bg-color: #ffffff;
+    --text-primary: #1a1a1a;    /* Stark black for Logos */
+    --text-secondary: #555555;  /* Soft grey for nuance */
+    
+    /* THE ACCENTS */
+    --accent-organic: #A0522D;  /* Sienna: Grounding, Human */
+    --accent-electric: #39FF14; /* Neon Green: Disruption, Digital */
+    
+    /* THE TYPOGRAPHY (Ethos) */
+    --font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-weight-bold: 700;
+    --font-weight-reg: 400;
+}
+
+/* RESET & BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-stack);
+    font-size: 18px; /* Large size for clarity */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   LAYOUT (The Structure)
+   A solid grid implies an organized mind.
+   ========================================= */
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Fixed Sidebar | Fluid Content */
+    min-height: 100vh;
+}
+
+/* SIDEBAR: The Identity Anchor */
+aside {
+    padding: 3rem 2rem;
+    border-right: 3px solid var(--accent-organic); /* The Sienna Line */
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* MAIN CONTENT: The Argument */
+main {
+    padding: 5rem 6rem;
+    max-width: 900px;
+}
+
+/* =========================================
+   TYPOGRAPHY (The Voice)
+   Helvetica implies objective truth.
+   ========================================= */
+
+/* The Name */
+.identity h1 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+/* The Role */
+.identity p {
+    font-family: 'Georgia', serif; /* Serif adds a touch of academic 'old school' */
+    font-style: italic;
+    color: var(--accent-organic);
+}
+
+/* Section Headers */
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 2.5rem;
+    color: var(--text-primary);
+}
+
+/* Sub-headers */
+h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    color: var(--accent-organic); /* Sienna section markers */
+    border-bottom: 1px solid var(--accent-organic);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    max-width: 65ch; /* Optimal reading length */
+}
+
+/* =========================================
+   INTERACTION (The Circulation)
+   Neon Green appears only on interaction.
+   ========================================= */
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 0.8rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    display: inline-block;
+}
+
+/* THE HOVER EFFECT */
+nav a:hover {
+    background-color: var(--accent-electric); /* NEON POP */
+    color: var(--text-primary);
+    transform: translateX(10px); /* Movement implies progress */
+    box-shadow: 4px 4px 0px var(--accent-organic); /* Sienna shadow */
+}
+
+/* The "Highlighter" Effect for your core thesis */
+.highlight {
+    background: linear-gradient(
+        to right, 
+        rgba(57, 255, 20, 0.4), 
+        rgba(57, 255, 20, 0.4)
+    );
+    padding: 0 4px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Modality)
+   Adapting the message to the medium.
+   ========================================= */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Stack visually */
+    }
+
+    aside {
+        height: auto;
+        border-right: none;
+        border-bottom: 3px solid var(--accent-organic);
+        padding: 2rem;
+        position: relative;
+    }
+
+    main {
+        padding: 3rem 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
