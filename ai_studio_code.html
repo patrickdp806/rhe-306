@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpreter of Complexity</title>
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111111; /* Soft black for readability */
+            --accent-sienna: #A0522D;
+            --accent-neon: #39FF14;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --spacing-unit: 2rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* LAYOUT GRID */
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr; /* Sidebar | Content */
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR (NAVIGATION & ID) */
+        aside {
+            padding: var(--spacing-unit);
+            border-right: 2px solid var(--accent-sienna);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .identity h1 {
+            font-weight: 800;
+            letter-spacing: -1px;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .identity p {
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 3rem;
+        }
+
+        nav li {
+            margin-bottom: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        /* INTERACTION VIBE: Sienna to Neon */
+        nav a:hover, a:hover {
+            color: var(--accent-sienna);
+            background-color: var(--accent-neon);
+            padding-left: 5px;
+            padding-right: 5px;
+            transform: skewX(-10deg);
+        }
+
+        .contact-mini {
+            font-size: 0.8rem;
+            color: var(--accent-sienna);
+        }
+
+        /* MAIN CONTENT AREA */
+        main {
+            padding: var(--spacing-unit) 4rem;
+            max-width: 800px; /* Reading line length constraint */
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        /* TYPOGRAPHY HIERARCHY */
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            border-left: 10px solid var(--accent-sienna);
+            padding-left: 20px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent-sienna);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        /* HIGHLIGHTER EFFECT FOR KEY THESIS */
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, var(--accent-neon) 60%);
+            display: inline;
+        }
+
+        /* LISTS FOR "WORKS" */
+        .work-list {
+            list-style: none;
+        }
+        .work-list li {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+        }
+        .work-list strong {
+            display: block;
+            font-size: 1.1rem;
+        }
+        .work-list span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            aside {
+                height: auto;
+                border-right: none;
+                border-bottom: 2px solid var(--accent-sienna);
+                position: relative;
+            }
+            main {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- SIDEBAR: The Communicator / Circulation -->
+        <aside>
+            <div class="identity">
+                <h1>[Your Name]</h1>
+                <p>Interpreter. Writer. Strategist.</p>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#manifesto">The Manifesto</a></li>
+                        <li><a href="#method">The Method</a></li>
+                        <li><a href="#dialogue">Dialogue</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="contact-mini">
+                <p>Based in [City]<br>Open for specific inquiries.</p>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT: The Message / Logos / Ethos -->
+        <main>
+            <!-- SECTION 1: The Hook (Exigence) -->
+            <section id="manifesto">
+                <h2>Clarity is a form of value.<br>I know how to produce it.</h2>
+                
+                <p>The rhetorical problem isn’t just income; it’s visibility in a market where traditional tracts of professional experience no longer fully capture value.</p> 
+                
+                <p>In a society saturated with content, <span class="highlight">I argue that coherence is persuasive.</span></p>
+
+                <p>I present myself not as an expert or authority figure, but as an attentive interpreter—someone who listens closely and translates complexity into usable form. This is a practice of judgment, clarity, and interpretive skill; qualities that remain scarce even in an AI-saturated economy.</p>
+            </section>
+
+            <!-- SECTION 2: The Proof (Logos/Ethos) -->
+            <section id="method">
+                <h3>The Method</h3>
+                <p>My work responds to the exigence by reframing professional value. Instead of a list of qualifications, I offer a way of thinking that cannot be replicated.</p>
+                
+                <ul class="work-list">
+                    <li>
+                        <strong>Synthesizing Complexity</strong>
+                        <span>Taking dense, technical, or abstract concepts and refining them for intelligent, non-specialist audiences.</span>
+                    </li>
+                    <li>
+                        <strong>Rhetorical Positioning</strong>
+                        <span>Aligning voice, tone, and medium to ensure the message survives circulation.</span>
+                    </li>
+                    <li>
+                        <strong>Strategic Narrative</strong>
+                        <span>Moving beyond "content creation" into long-term narrative coherence.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SECTION 3: The Ask (Purpose/Circulation) -->
+            <section id="dialogue">
+                <h3>Circulation</h3>
+                <p>This page avoids explicit selling to maintain ethos and focus on long-term positioning. It invites conversation instead of demanding action.</p>
+                
+                <p>If you value coherence and distrust buzzwords, we likely have much to discuss.</p>
+
+                <p><a href="mailto:your@email.com" style="border-bottom: 2px solid var(--accent-sienna); text-decoration: none; color: black;">Start a conversation &rarr;</a></p>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
